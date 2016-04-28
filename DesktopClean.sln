@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClean", "DesktopClean\DesktopClean.csproj", "{DF18ED77-09A4-414F-992B-2687CEF46A4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClean.App", "DesktopClean.App\DesktopClean.App.csproj", "{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF18ED77-09A4-414F-992B-2687CEF46A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF18ED77-09A4-414F-992B-2687CEF46A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF18ED77-09A4-414F-992B-2687CEF46A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF18ED77-09A4-414F-992B-2687CEF46A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
