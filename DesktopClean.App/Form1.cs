@@ -205,7 +205,7 @@ namespace DesktopClean.App
                 Hide();
                 notificacao.Visible = true;
                 notificacao.BalloonTipText ="Monitorando " + PathDestino;
-                notificacao.BalloonTipTitle = "DesltopClean";
+                notificacao.BalloonTipTitle = "DesktopClean";
                 notificacao.ShowBalloonTip(100);
 
             }
