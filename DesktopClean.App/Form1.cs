@@ -9,39 +9,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace DesktopClean.App
 {
     public partial class Form1 : Form
     {
-        public string PathDestino { 
-            get 
-            {
-                if (!txtDestino.Text.Equals(String.Empty))
-                {
-                    if (Directory.Exists(txtDestino.Text))
-                        return txtDestino.Text;
-                    else
-                        throw new Exception("Diretório de destino inválido.");
 
-                }
+        #region Propriedades
+
+        public string PathDestino
+        {
+            get
+            {
+                if (Directory.Exists(Apoio.DiretorioDestino()))
+                    return Apoio.DiretorioDestino();
                 else
-                    throw new Exception("Nenhum diretório configurado para monitoramento.");
-            } 
+                    throw new Exception("Nenhum diretório de destino configurado.");
+
             }
+        }
+
+        #endregion
 
         public Form1()
         {
             InitializeComponent();
-            //txtDestino.Text = @"C:\Users\daniel.cardoso\Documents\Daniel";
+
+           
+           
         }
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
              try
 
             {
-
+                toolStripStatusLabel1.Text = "Destino: " + Apoio.DiretorioDestino();
                 //caminho da pasta que o FileSystemWatcher irá monitorar (atribuo o valor do TextBox)
 
                 fsw.Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -203,17 +210,9 @@ namespace DesktopClean.App
             if (FormWindowState.Minimized == WindowState)
             {
                 Hide();
-                string mensagem = "";
-                try
-                {
-                    mensagem = "Monitorando " + PathDestino;
-                }
-                catch
-                {
-                    mensagem = "Nenhum diretorório cofigurado para monitoramento.";
-                }
+              
                 notificacao.Visible = true;
-                notificacao.BalloonTipText = mensagem;
+                notificacao.BalloonTipText = "Monitorando...";
                 notificacao.BalloonTipTitle = "DesktopClean";
                 notificacao.ShowBalloonTip(100);
 
@@ -221,13 +220,16 @@ namespace DesktopClean.App
                
         }
 
-        private void btnProcurar_Click(object sender, EventArgs e)
+      
+
+        private void diretórioDestinoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult result = this.folderBrowserDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                txtDestino.Text = folderBrowserDialog1.SelectedPath;
-            }
+            new ConfigurarDiretorioDestino().ShowDialog(this);
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Destino: " + Apoio.DiretorioDestino();
         }
     }
 }
