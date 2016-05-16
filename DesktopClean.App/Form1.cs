@@ -26,14 +26,14 @@ namespace DesktopClean.App
 
                 }
                 else
-                    throw new Exception("Informe um diretório de destino.");
+                    throw new Exception("Nenhum diretório configurado para monitoramento.");
             } 
             }
 
         public Form1()
         {
             InitializeComponent();
-            txtDestino.Text = @"C:\Users\daniel.cardoso\Documents\Daniel";
+            //txtDestino.Text = @"C:\Users\daniel.cardoso\Documents\Daniel";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -203,8 +203,17 @@ namespace DesktopClean.App
             if (FormWindowState.Minimized == WindowState)
             {
                 Hide();
+                string mensagem = "";
+                try
+                {
+                    mensagem = "Monitorando " + PathDestino;
+                }
+                catch
+                {
+                    mensagem = "Nenhum diretorório cofigurado para monitoramento.";
+                }
                 notificacao.Visible = true;
-                notificacao.BalloonTipText ="Monitorando " + PathDestino;
+                notificacao.BalloonTipText = mensagem;
                 notificacao.BalloonTipTitle = "DesktopClean";
                 notificacao.ShowBalloonTip(100);
 
