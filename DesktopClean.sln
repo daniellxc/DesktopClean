@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClean", "DesktopClea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClean.App", "DesktopClean.App\DesktopClean.App.csproj", "{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClean.Testes", "DesktopClean.Testes\DesktopClean.Testes.csproj", "{52368EE0-4C23-4E72-83DE-577E2EB77F64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11AA93B5-851F-4E1A-8E57-BAC021AFB04E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52368EE0-4C23-4E72-83DE-577E2EB77F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52368EE0-4C23-4E72-83DE-577E2EB77F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52368EE0-4C23-4E72-83DE-577E2EB77F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52368EE0-4C23-4E72-83DE-577E2EB77F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -35,7 +35,7 @@ namespace DesktopClean.App
         public Form1()
         {
             InitializeComponent();
-
+            Loggar(DateTime.Now.ToString() + " - Aplicação iniciada");
            
            
         }
@@ -131,7 +131,7 @@ namespace DesktopClean.App
                 txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-
+                Loggar(txtNotificacoes.Text);
                 MoverArquivo(e.FullPath, PathDestino);
             }
             catch (Exception ex)
@@ -140,6 +140,11 @@ namespace DesktopClean.App
             }
            
 
+        }
+
+        private void Loggar(string loggMessage)
+        {
+            Apoio.GravarEmArquivoTexto(loggMessage, Application.StartupPath, "log.txt", true);
         }
 
         private void fsw_Created(object sender, FileSystemEventArgs e)
@@ -155,7 +160,7 @@ namespace DesktopClean.App
                 txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-
+                Loggar(txtNotificacoes.Text);
                 MoverArquivo(e.FullPath, PathDestino);
             }
             catch (Exception ex)
@@ -193,7 +198,7 @@ namespace DesktopClean.App
                 txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-
+                Loggar(txtNotificacoes.Text);
                 MoverArquivo(e.FullPath,PathDestino);
             }
             catch (Exception ex)

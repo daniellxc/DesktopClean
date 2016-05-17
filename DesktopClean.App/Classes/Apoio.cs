@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,21 @@ namespace DesktopClean.App.Classes
         public static string DiretorioDestino()
         {
             return ConfigurationManager.AppSettings["pathDestino"];
+        }
+
+        public static void GravarEmArquivoTexto(string texto, string path, string fileName,bool append)
+        {
+            if (Directory.Exists(path))
+            {
+                StreamWriter sw = new StreamWriter(path+"\\"+fileName,append);
+                sw.WriteLine(texto);
+                sw.Close();
+            }
+            else
+            {
+                throw new Exception("Diretório de destino do arquivo não existe.");
+            }
+            
         }
     }
 }
