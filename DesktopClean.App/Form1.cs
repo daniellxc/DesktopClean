@@ -122,6 +122,8 @@ namespace DesktopClean.App
         {
             try
             {
+                txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
+
                 txtNotificacoes.Text += String.Format("Alteração: {0} {1}", e.FullPath, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
@@ -144,6 +146,8 @@ namespace DesktopClean.App
         {
             try
             {
+                txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
+
                 txtNotificacoes.Text += String.Format("Criação: {0} {1}", e.FullPath, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
@@ -180,6 +184,8 @@ namespace DesktopClean.App
         {
             try
             {
+                txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
+
                 txtNotificacoes.Text += String.Format("Criação: {0} {1}", e.FullPath, Environment.NewLine);
 
                 txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
