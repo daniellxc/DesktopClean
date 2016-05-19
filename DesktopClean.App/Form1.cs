@@ -35,8 +35,8 @@ namespace DesktopClean.App
         public Form1()
         {
             InitializeComponent();
-            Loggar(DateTime.Now.ToString() + " - Aplicação iniciada");
-           
+            Log.LoggarInicio();
+       
            
         }
 
@@ -118,20 +118,29 @@ namespace DesktopClean.App
 
         }
 
+        private string MontarMensagem(FileSystemEventArgs e)
+        {
+            string retorno = "";
+
+            retorno += String.Format("Alteração: {0} {1}", e.FullPath, Environment.NewLine);
+
+            retorno += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
+
+            retorno += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
+
+            retorno += String.Format("----------------------- {0}", Environment.NewLine);
+
+            return retorno;
+        }
+
         private void fsw_Changed(object sender, FileSystemEventArgs e)
         {
             try
             {
+                string mensagem = MontarMensagem(e);
                 txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
-
-                txtNotificacoes.Text += String.Format("Alteração: {0} {1}", e.FullPath, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-                Loggar(txtNotificacoes.Text);
+                txtNotificacoes.Text += mensagem;
+                Log.Loggar(mensagem);
                 MoverArquivo(e.FullPath, PathDestino);
             }
             catch (Exception ex)
@@ -151,16 +160,10 @@ namespace DesktopClean.App
         {
             try
             {
+                string mensagem = MontarMensagem(e);
                 txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
-
-                txtNotificacoes.Text += String.Format("Criação: {0} {1}", e.FullPath, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-                Loggar(txtNotificacoes.Text);
+                txtNotificacoes.Text += mensagem;
+                Log.Loggar(mensagem);
                 MoverArquivo(e.FullPath, PathDestino);
             }
             catch (Exception ex)
@@ -189,17 +192,11 @@ namespace DesktopClean.App
         {
             try
             {
+                string mensagem = MontarMensagem(e);
                 txtNotificacoes.Text += DateTime.Now.ToString() + Environment.NewLine;
-
-                txtNotificacoes.Text += String.Format("Criação: {0} {1}", e.FullPath, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Nome: {0} {1}", e.Name, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("Evento: {0} {1}", e.ChangeType, Environment.NewLine);
-
-                txtNotificacoes.Text += String.Format("----------------------- {0}", Environment.NewLine);
-                Loggar(txtNotificacoes.Text);
-                MoverArquivo(e.FullPath,PathDestino);
+                txtNotificacoes.Text += mensagem;
+                Log.Loggar(mensagem);
+                MoverArquivo(e.FullPath, PathDestino);
             }
             catch (Exception ex)
             {
